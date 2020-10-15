@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+   wordpresstroll:
+     image: afornsv/fem-un-docker
+     container_name: wordpress
+     volumes:
+       - wordpress_file:/var/www/html
+     networks:
+       - backend
+       - frontend
+     ports:
+       - "8100:80"
+     restart: always
+volumes:
+    wordpress_file: {}
+networks:
+    backend: {}
+    frontend: {}
+
